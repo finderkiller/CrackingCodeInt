@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/Cracking/ch12/ch12-1/12-1.cpp
+getopt.h
+-
+fstream
+-
+iostream
+-
+string
+-
+vector
+-
+

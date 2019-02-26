@@ -1,0 +1,3 @@
+/root/Cracking/ch12/ch12-1/CMakeFiles/rebuild_cache.dir
+/root/Cracking/ch12/ch12-1/CMakeFiles/12-1.dir
+/root/Cracking/ch12/ch12-1/CMakeFiles/edit_cache.dir
