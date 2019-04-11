@@ -6,7 +6,7 @@ def find_next_node(node):
     if (node == None):
         return None
     if (node.right != None):
-        return find_left_most(node)
+        return find_left_most(node.right)
     while (node.parent != None and node.parent.right == node):
         node = node.parent
     return node.parent

@@ -1,4 +1,4 @@
-#! /usr/bin/python2
+#! /usr/local/bin/python2
 from basic_tree_node import *
 import sys
 
@@ -34,7 +34,7 @@ def sol_using_extra_space(node1, node2):
 
 def getPreOrderStr(node):
     if (node == None):
-        return "x";
+        return "x"
     string = ""
     string += str(node.value)
     string += getPreOrderStr(node.left)

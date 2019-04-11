@@ -44,7 +44,7 @@ def main(argv):
     input = []
     for idx in range(1, len(argv), 1):
         input.append(argv[idx])
-        node = build_tree_node(input)
+    node = build_tree_node(input)
 
     node.print_data()
     node.print_by_level()

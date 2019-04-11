@@ -46,7 +46,7 @@ def main(argv):
         node = build_tree_node(input)
 
     node.print_data()
-    print sol1_is_balanced(node)
+    # print sol1_is_balanced(node)
     print sol2_is_balanced(node)
 if __name__ == "__main__":
     main(sys.argv)
