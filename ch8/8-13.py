@@ -14,7 +14,7 @@ def createStackDPHelper(boxes, index, stackMap):
             maxHeight = max(height, maxHeight)
 
     stackMap[index] = maxHeight + bottomBox.height
-    return return stackMap[index]
+    return stackMap[index]
 
 def createStackDP(boxes):
     sorted_boxes = sortByHeight(boxes)
