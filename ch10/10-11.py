@@ -9,9 +9,9 @@ def sol2(array):
     return ret
 
 def findMax(array, a, b, c):
-    valuea = array[a] if 0 < a < len(array) else (-sys.maxsize-1)
-    valueb = array[b] if 0 < b < len(array) else (-sys.maxsize-1)
-    valuec = array[c] if 0 < c < len(array) else (-sys.maxsize-1)
+    valuea = array[a] if 0 <= a < len(array) else (-sys.maxsize-1)
+    valueb = array[b] if 0 <= b < len(array) else (-sys.maxsize-1)
+    valuec = array[c] if 0 <= c < len(array) else (-sys.maxsize-1)
 
     maxValue = max(valuea, valueb, valuec)
     if (maxValue == valuea):

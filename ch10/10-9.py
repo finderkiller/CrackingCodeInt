@@ -15,6 +15,7 @@ class Coordinate:
             return False
         if (0 <= self.row and self.row < len(matrix)) and (0 <= self.col and self.col < len(matrix[0])):
             return True
+        return False
     def isbefore(self, coordinate):
         return self.row <= coordinate.row and self.col <= coordinate.col
     def setAverage(self, a, b):
