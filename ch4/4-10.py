@@ -1,4 +1,4 @@
-#! /usr/local/bin/python2
+#! /usr/bin/python2
 from basic_tree_node import *
 import sys
 
@@ -56,8 +56,8 @@ def main(argv):
     node2.print_data()
     node2.print_by_level()
 
-#    if sol_using_extra_space(node1, node2):
-#        print("Tree2 is subtree of Tree1")
+    if sol_using_extra_space(node1, node2):
+        print("Tree2 is subtree of Tree1")
 
     if sol_inplace_compare(node1, node2):
         print("Tree2 is subtree of Tree1")

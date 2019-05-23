@@ -37,7 +37,7 @@ class Project2:
     def getChildren(self):
         return self.children
 
-#projects = {
+# projects = {
 #          "a" : Project1("a"),
 #          "b" : Project1("b"),
 #          "c" : Project1("c"),
@@ -102,18 +102,26 @@ def sol1_find_build_order(graph):
             projects[value].increaseDependencies()
 
     order = []
+    ret = []
     project_list = []
     for key, project in projects.items():
         project_list.append(project)
 
     add_non_depend_project(project_list, order)
-    toBeProcessed = 0
-    while (toBeProcessed < len(order)):
-        for child in order[toBeProcessed].getChildren():
+#     toBeProcessed = 0
+#     while (toBeProcessed < len(order)):
+    while(len(order) != 0):
+#         current = order[toBeProcessed]
+#         if current == None:         # no independent project, there is circle
+#             return []
+        current = order.pop(0)
+        ret.append(current)
+        for child in current.getChildren():
             child.decreaseDependencies()
-        add_non_depend_project(order[toBeProcessed].getChildren(), order)
-        toBeProcessed += 1
-    return order
+        add_non_depend_project(current.getChildren(), order)
+#         toBeProcessed += 1
+#     return order
+    return ret
 
 def add_non_depend_project(project_list, order):
     for project in project_list:
@@ -121,7 +129,7 @@ def add_non_depend_project(project_list, order):
             order.append(project)
 
 def main():
-#    order = sol1_find_build_order(graph)
+#     order = sol1_find_build_order(graph)
     order = sol2_find_build_order_dfs(graph)
     output = []
     if (len(order) != len(projects)):

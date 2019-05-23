@@ -1,4 +1,4 @@
-#! /usr/bin/python2
+#! /usr/bin/python3
 import sys
 
 class Stack:
@@ -8,7 +8,7 @@ class Stack:
         self.stack = [] * size
     def __init__(self):
         self.top = None
-        self.capacity = sys.maxint
+        self.capacity = sys.maxsize
         self.stack = []
     def push(self, value):
         if (self.size() == self.capacity):
@@ -39,4 +39,4 @@ class Stack:
             return None
         return self.stack[self.top]
     def print_data(self):
-        print self.stack
+        print(self.stack)
