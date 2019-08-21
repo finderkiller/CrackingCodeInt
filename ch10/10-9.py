@@ -25,8 +25,6 @@ class Coordinate:
 def bsearch(matrix, origin, dest, x):
     if (not origin.inbound(matrix) or not dest.inbound(matrix)):
         return None
-    if (matrix[origin.row][origin.col] == x):
-        return origin
     if (not origin.isbefore(dest)):
         return None
 

@@ -21,22 +21,22 @@ graph = { "a" : Node("a", ["b", "c"]),
           "f" : Node("f", ["a"]),
           "g" : Node("g", [])
         }
+
+queue = []
 def has_route(g, start, end):
     if start == end:
         return True
-    q = []
-    g[start].setVisited(True)
-    q.append(g[start])
-    while(len(q) != 0):
-        cur = q.pop(0)
-        for adj in cur.getAdjacent():
-            if g[adj].getVisited():
-                continue
-            if adj == end:
+    queue = [graph[start]]
+    graph[start].setVisited(True)
+    while len(queue) > 0:
+        node = graph[queue.pop(0)]
+        for neighbor in node.getAdjacent():
+            if neighbor == end:
                 return True
-            else:
-                g[adj].setVisited(True)
-                q.append(g[adj])
+            if graph[neighbor].getVisited:
+                continue
+            graph[neighbor].setVisited(True)
+            queue.append(neighbor)
     return False
 
 def main(argv):

@@ -6,17 +6,19 @@ from basic_node import LinkedList
 #FOLLOW UP How would you solve this problem if a temporary buffer is not allowed?
 #sol1: time:O(n), space:O(n)
 
-def sol_using_buffer(linked_list):
-    hash_set = set()
-    prev = None
-    cur = linked_list.head
-    while(cur != None):
-        if (cur.data in hash_set):
-            prev.next = cur.next
-        else:
-            hash_set.add(cur.data)
-            prev = cur
+def sol_using_buffer(head):
+    if not head:
+        return
+    table = set()
+    table.add(head.data)
+    cur = head
+    while cur != None and cur.next!=None:
+        if cur.next.data in table:
+            cur.next = cur.next.next
+            continue
+        table.add(cur.next.data)
         cur = cur.next
+    return head
 
 #sol2: time:O(n^2), no extra space, removing node could using only one pointer but need to consider the value of first node
 def sol_two_pointer(linked_list):
@@ -46,7 +48,6 @@ def sol_two_pointer_wo_prev(head):
                 runner = runner.next
         cur = cur.next
     return head
-
 
 def main(argv):
     linked_list = LinkedList()

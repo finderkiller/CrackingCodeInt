@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#! /usr/local/bin/python3
 import sys
 
 def sol2(maze):
@@ -45,6 +45,8 @@ def sol_brute_force(maze, r, c, path):
 
 
 def main(argv):
+    a = [[None]*3] * 2
+    print(a)
     w = 8
     h = 3
     maze = [True] * w

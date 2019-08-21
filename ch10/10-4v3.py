@@ -10,25 +10,23 @@ def elementAt(input, index):
 
 
 def sol(input, target):
-    if len(input) == 0:
+    if not input:
         return -1
-    index = 1
-    while elementAt(input, index) != -1 and input[index] < target:
-        index *= 2
-
-    return impl(input, index//2, index, target)
-
-def impl(input, start, end, target):
-    while (start <= end):
-        mid = (start+end)//2
-        if elementAt(input, mid) == -1 or elementAt(input, mid) > target:
-            end = mid - 1
-        elif elementAt(input, mid) < target:
-            start = mid + 1
-        else:
-            return mid
-    return -1
-
+    idx = 1
+    while elementAt(input, idx) != -1 or elementAt(input, idx) < target:
+        idx *= 2
+    return search(input, idx//2, idx, target)
+    
+def search(input, start, end, target):
+    if start > end:
+        return -1
+    mid = start + (end- start)//2
+    if elementAt[mid] == target:
+        return mid
+    if elementAt[mid] == -1 or elementAt[mid] > target:
+        return search(input, start, mid-1, target)
+    if elementAt[mid] < target:
+        return search(input mid+1, end, target)
 
 def main(argv):
     input = []

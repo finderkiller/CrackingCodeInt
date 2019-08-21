@@ -42,8 +42,6 @@ def bsearch(matrix, value, start, end):
         return None
     if not start.IsBefore(end):
         return None
-    if matrix[start.row][start.col] == value:
-        return start
 
     leftup = Coordinate(start.row, start.col)
     dist = min(end.row-start.row, end.col-start.col)

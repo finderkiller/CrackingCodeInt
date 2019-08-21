@@ -1,12 +1,12 @@
-#! /usr/bin/python3
+#! /usr/local/bin/python3
 import sys
 import time
 
 def sol_brute_helper(amount, denom, index):
     if (amount == 0):
         return 1
-    if (len(denom) - 1 == index):
-        return 1
+    if (index == len(denom)):
+        return 0
     ways = 0
     denommount = denom[index]
     i = 0
@@ -17,7 +17,7 @@ def sol_brute_helper(amount, denom, index):
     return ways
 
 def sol_brute(n):
-    denom = [25, 10, 5, 1]
+    denom = [5, 2, 1]
     return sol_brute_helper(n, denom, 0)
 
 def sol_dp_helper(amount, denom, index, table):
@@ -40,7 +40,7 @@ def sol_dp_helper(amount, denom, index, table):
 
 def sol_dp(n):
     table = {}
-    denom = [25, 10, 5, 1]
+    denom = [5, 2, 1]
     return sol_dp_helper(n, denom, 0, table)
 
 def main(argv):

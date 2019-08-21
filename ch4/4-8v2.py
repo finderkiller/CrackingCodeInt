@@ -35,7 +35,7 @@ def sol4_helper(node, p, q):
         node_is_ans = leftResult.Node() != None or rightResult.Node() != None
         return Result(node, node_is_ans)
     else:
-        return Result(leftResult if leftResult.Node() !=  None else rightResult, False)
+        return Result(leftResult.node if leftResult.Node() !=  None else rightResult.node, False)
 
 
 def sol3_common_ancestor(root, p, q):

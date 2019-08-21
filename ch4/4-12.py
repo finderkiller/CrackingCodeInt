@@ -31,7 +31,7 @@ def IncrementHash(path_count, key, delta):
 #sol1: time:O(nlogn), n nodes, each node touch logn nodes (depth is logn)
 def sol_brute_force(node, targetSum, currentSum, ):
     if (node == None):
-        return 0;
+        return 0
     pathSumOnNode = pathWithSumFromNode(node, targetSum, 0)
     pathSumOnLeft = sol_brute_force(node.left, targetSum)
     pathSumOnRight = sol_brute_force(node.right, targetSum)

@@ -21,7 +21,11 @@ def sol_bit_vector(test):
         print idx
         if idx < 0:
             return False
-        checker ^= (1 << idx)
+        checker ^= (1<<idx)
+        #if checker & (1 << idx) == 0:
+            #checker |= (1<<idx)
+        #else:
+            #checker &= ~(1<<idx)
         print bin(checker)
 
     return checker == 0 or (checker & (checker - 1)) == 0
