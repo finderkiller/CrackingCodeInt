@@ -40,11 +40,11 @@ class Solution:
         
         while rowup < rowdown:
             for col in range(colleft, colright):
-                offset = col - rowup
+                offset = col - colleft
                 tmp = matrix[rowup][col]
                 matrix[rowup][col] = matrix[rowdown-offset][colleft]
                 matrix[rowdown-offset][colleft] = matrix[rowdown][colright-offset]
-                matrix[rowdown][colright-offset] = matrix[col][colright]
+                matrix[rowdown][colright-offset] = matrix[rowup+offset][colright]
                 matrix[col][colright] = tmp
             rowup +=1
             rowdown -=1

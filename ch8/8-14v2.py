@@ -7,7 +7,7 @@ def countEval(expression, result):
     if len(expression) == 1:
         return 1 if bool(expression) == result else 0
     ways = 0
-    for idx in range(1, len(expression, 2):
+    for idx in range(1, len(expression), 2):
         left = expression[:idx]
         right = expression[idx+1:]
         left_true = countEval(left, True)
@@ -37,7 +37,7 @@ def countEvalMem(expression, result, table):
     if str(result)+expression in table:
         return table[(str(result)+expression)]
     ways = 0
-    for idx in range(1, len(expression, 2):
+    for idx in range(1, len(expression), 2):
         left = expression[:idx]
         right = expression[idx+1:]
         left_true = countEval(left, True)

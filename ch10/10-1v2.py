@@ -2,19 +2,22 @@
 import sys
 
 def merge(a, b, counta, countb):
-    indexa = counta - 1
-    indexb = countb - 1
-    indexMerge = counta + countb - 1
-
-    while(indexb >= 0):
-        if indexa >=0 and a[indexa] >= b[indexb]:
-            a[indexMerge] = a[indexa]
-            indexa -= 1
-        else:
-            a[indexMerge] = b[indexb]
-            indexb -= 1
-        indexMerge -= 1
-    return
+  total_idx = len(a) - 1
+  idx_a = counta - 1
+  idx_b = countb - 1
+  while idx_a >=0 or idx_b >=0:
+    if idx_a < 0:
+      a[total_idx] = b[idx_b]
+      idx_b -= 1
+    elif idx_b < 0:
+      break
+    elif a[idx_a] >= b[idx_b]:
+      a[total_idx] = a[idx_a]
+      idx_a -= 1
+    else:
+      a[total_idx] = b[idx_b]
+      idx_b -= 1
+    total_idx -= 1
 
 
 def main(argv):
